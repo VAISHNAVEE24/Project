@@ -1,0 +1,21 @@
+intFlamesense = HIGH;
+int tap_servo_pin =5;
+void setup()
+{
+pinMode(buzzerPinnum, OUTPUT);
+pinMode(flamePinnum, INPUT);
+Serial.begin(9600);
+}
+void loop()
+{
+Flamesense = digitalRead(flamePinnum);
+if (Flamesense== LOW)
+{ Serial.println(&quot;Fire Detected&quot;);
+digitalWrite(buzzerPinnum, HIGH);
+tap_servo.write (180);
+}
+else
+{
+Serial.println(&quot;No Fire Detected&quot;);
+digitalWrite(buzzerPinnum, LOW);
+}
